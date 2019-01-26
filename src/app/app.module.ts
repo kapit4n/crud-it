@@ -8,6 +8,7 @@ import { OCreateComponent } from './ui/comp/o-create/o-create.component';
 import { OUpdateComponent } from './ui/comp/o-update/o-update.component';
 import { OInfoComponent } from './ui/comp/o-info/o-info.component';
 import { OService } from './svc/ui/o.service'
+import { ConfigService } from './svc/ui/config.service'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { OService } from './svc/ui/o.service'
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [OService],
+  providers: [OService, ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
