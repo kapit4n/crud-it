@@ -1,9 +1,18 @@
-<form action="/action_page.php">
-  Product Name:<br>
-  <input type="text" name="name" value="">
-  <br>
-  Cost:<br>
-  <input type="number" name="cost" value="">
-  <br><br>
-  <input type="submit" value="Submit">
+<form (ngSubmit)="saveData()" #saveForm="ngForm">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" required [(ngModel)]="data.name" name="name" #name="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      Name is required
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="cost">Name</label>
+    <input type="number" id="cost" required [(ngModel)]="data.cost" name="cost" #cost="ngModel">
+    <div [hidden]="cost.valid || cost.pristine" class="alert alert-danger">
+      Cost is required
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success" [disabled]="!saveForm.form.valid">Save</button>
 </form> 
