@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OService } from './../../../svc/ui/o.service'
+import IProduct from './../../../svc/model/IProduct'
 
 @Component({
   selector: 'app-o-create',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OCreateComponent implements OnInit {
 
-  constructor() { }
+  data: IProduct;
+  constructor(private oSvc: OService) {
+    this.data = { id: 0, name: "", cost: 0, description: "" }
+  }
 
   ngOnInit() {
+  }
+
+  saveData() {
+    this.oSvc.save(this.data)
   }
 
 }
