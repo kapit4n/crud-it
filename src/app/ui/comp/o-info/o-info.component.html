@@ -1,6 +1,10 @@
-<article>
-  <h1>Product 1</h1>
-  <p>
-    cost: $100
-  </p>
+<article class="card" style="width: 96%;">
+  <img src="card-img-top" src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-product-4_large.png?v=1530129360" alt="Card Image">
+  <div class="card-body">
+    <h5 class="card-title">{{data.name}}</h5>
+    <p class="card-text">
+      cost: ${{data.cost}} <br />
+      {{data.description}}
+    </p>
+  </div>
 </article>

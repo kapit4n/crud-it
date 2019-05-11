@@ -1,7 +1,8 @@
 <form (ngSubmit)="saveData()" #saveForm="ngForm">
+  <h2>Create a product</h2>
   <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" id="name" required [(ngModel)]="data.name" name="name" #name="ngModel">
+    <input type="text" id="name" required [(ngModel)]="data.name" name="name" #name="ngModel" class="form-control">
     <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
       Name is required
     </div>
@@ -9,7 +10,7 @@
   
   <div class="form-group">
     <label for="cost">Name</label>
-    <input type="number" id="cost" required [(ngModel)]="data.cost" name="cost" #cost="ngModel">
+    <input type="number" id="cost" required [(ngModel)]="data.cost" name="cost" #cost="ngModel" class="form-control">
     <div [hidden]="cost.valid || cost.pristine" class="alert alert-danger">
       Cost is required
     </div>
